@@ -29,7 +29,6 @@ class Talker(Node):
             overflow_msg = Int32()
             overflow_msg.data = 100
             self.overflow_publisher.publish(overflow_msg)
-            self.get_logger().warn(f"OVERFLOW! Reset to 0, published 100 to /even_overflow")
         
         # Публикуем четное число
         self.publisher.publish(msg)

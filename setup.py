@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'first_node = artems_study_pkg.scripts.first_node:main'
         ],
     },
 )

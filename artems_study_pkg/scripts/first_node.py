@@ -8,6 +8,7 @@ def main(args=None):
     rclpy.init(args=args)                   # инициализация ROS 2
     node = Node('hello_node')               # создаём узел с именем hello_node
     node.get_logger().info("Hello ROS 2 World! 🚀")
+    node.create_timer(5.0, lambda: node.get_logger().info(f"Time: {node.get_clock().now()}"))
     rclpy.spin(node)                        # запускаем цикл обработки
     node.destroy_node()
     rclpy.shutdown()

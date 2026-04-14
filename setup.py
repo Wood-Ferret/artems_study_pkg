@@ -13,8 +13,8 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='igsp-01',
-    maintainer_email='ilamajorov365@gmail.com',
+    maintainer='Artem & Artem',
+    maintainer_email='artem20132001@mail.ru',
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={

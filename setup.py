@@ -25,8 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'first_node = artems_study_pkg.scripts.first_node:main',
-            'talker = artems_study_pkg.talker:main',
-            'listener = artems_study_pkg.listener:main',
+            'even_publisher = artems_study_pkg.even_num_publisher:main',
+            'even_overflow_listener = artems_study_pkg.even_num_overflow_listener:main',
         ],
     },
 )

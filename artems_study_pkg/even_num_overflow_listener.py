@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import rclpy                        # главная библиотека ROS 2
 from rclpy.node import Node         # от неё наследуемся
-from std_msgs.msg import String     # тип сообщения — строка
+from std_msgs.msg import Int32, String     # тип сообщения — строка
 
 class Listener(Node):
 
     def __init__(self):
         # Даём узлу имя "listener"
-        super().__init__('listener')
+        super().__init__('even_overflow_listener')
 
         # Создаём подписку на топик
         # Название топика     → 'my_chat_topic'
@@ -15,8 +15,8 @@ class Listener(Node):
         # Функция-обработчик  → self.callback
         # 10 — размер очереди
         self.subscription = self.create_subscription(
-            String,
-            'my_chat_topic',
+            Int32,
+            '/even_overflow',
             self.callback,
             10)
 
@@ -27,7 +27,7 @@ class Listener(Node):
     def callback(self, msg):
         # msg — это пришедшее сообщение
         # msg.data — это строка внутри сообщения
-        self.get_logger().info(f"Я услышал: {msg.data}")
+        self.get_logger().info(f"WARNING number = {msg.data}")
 
 def main():
     rclpy.init()                    # стартуем ROS 2
